@@ -1,0 +1,158 @@
+body { 
+	background-image:	url(../imagens/backgroundbody.png);
+	background-repeat:	repeat-x;
+	background-position:top left;
+	background-color:	white;
+	font-family:      	Georgia, "Times New Roman", Times, serif;
+	font-size:        	small;
+	margin:           	0px;
+	height:				auto;
+}
+
+#allcontent {
+	width:				800px;
+	background-image:	url(../imagens/background800.png);
+	background-repeat:	repeat-y;
+	background-position:top left;
+	background-color:	white;
+	margin-left: 		auto;
+	margin-right:		auto;
+}
+
+#header {
+	height:				130px;
+	padding:			0px 20px 0px 20px;
+	margin-bottom:		10px;
+	text-align:			center;
+}
+
+#login {
+	display:			block;
+	float:				right;
+}
+
+#main {
+	width:				600px;
+	float:				right;
+	margin:				0px 10px 10px 0px;
+	padding:			5px 15px 10px 15px;
+	background-image:	url(../imagens/fundo_claro.png);
+	background-repeat:	repeat;
+	background-position:top left;
+	font-family:		Verdana, sans-serif;
+}
+
+#sidebar {
+	padding:			5px;
+	margin:				0px 650px 10px 10px;
+	background-image:	url(../imagens/fundo_claro.png);
+	background-repeat:	repeat;
+	background-position:top left;
+}
+
+#menu {
+	padding:			0;
+	margin:				0;
+	list-style-type:	none;
+	font:				11px Verdana, sans-serif;
+	border-top:			1px solid #a66300;
+}
+#menu li {
+	border-bottom:		1px solid #a66300;
+	border-right:		1px solid #a66300;
+	margin:				0;
+}
+#menu li a {
+	display:			block;
+	padding:			5px 5px 5px 0.5em;
+	font-weight:		bold;
+	border-left:		10px solid #4188d3;
+	background-color:	#ffc773;
+	text-decoration:	none;
+}
+#menu li a:hover {
+	border-left:		10px solid #689cd3;
+	background-color:	#ffe273;
+}
+
+#footer {
+	font-size:			70%;
+	text-align:			center;
+	height:				50px;
+	clear:				right;
+	background-color:	#bf8630;
+	padding-top:		20px;
+}
+
+h1, h2, th {
+	color:				#0d58a6;
+	font-family:      	Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+	font-size:			130%;	
+}
+
+h2 { 
+	font-size:			115%;
+}
+
+a {
+	color:				#a66300;
+}
+a:hover {
+	color:				#bf8630;
+}
+
+table {
+	border-style:		solid;
+	border-width:		1px;
+	border-color:		#bf8630;
+}
+
+table.form{
+	width:				410px;	
+}
+
+td , th {
+	border-style:		solid;
+	border-width:		1px;
+	border-color:		#bf8630;
+}
+td.label {
+	font-weight:		bold;
+	width:				180px;
+}
+td input.campo {
+	width:				230px;	
+}
+
+input[type="submit"], input[type="button"] {
+	padding:			2px 8px;
+	height:				25px;
+	background-image:	url(../imagens/botao.png);
+	background-repeat:	repeat-x;
+	background-color:	#689cd3;
+	cursor:				pointer;
+	font:				inherit;
+}
+input[type="submit"]:hover, input[type="button"]:hover {
+	background-color:	#ffffff;
+}
+td input[type="text"], input[type="password"] {
+	width:				98%;	
+}
+h3.mensagem {
+	display:			block;
+	background-image:	url(../imagens/fundo_claro.png);
+	background-repeat:	repeat;
+	background-position:top left;
+	border-style:		dashed;
+	border-width:		1px;
+	border-color:		#bf8630;
+}
+.mensagem {
+	color:				red;
+	font-size:			100%;
+	font-weight:		normal;
+}

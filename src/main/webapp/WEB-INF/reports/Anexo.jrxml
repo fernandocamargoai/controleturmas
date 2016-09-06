@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-09-06T13:24:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Anexo" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="758" leftMargin="42" rightMargin="42" topMargin="42" bottomMargin="42" uuid="d86effa6-7d74-4fe5-b2e3-6cd17adfd633">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="196"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigoTurma" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="matriculaProfessor" class="java.lang.Integer"/>
+	<parameter name="nomeProfessor" class="java.lang.String"/>
+	<parameter name="nomeDisciplina" class="java.lang.String"/>
+	<parameter name="cargaHoraria" class="java.lang.Integer"/>
+	<parameter name="ano" class="java.lang.Integer"/>
+	<parameter name="semestre" class="java.lang.Integer"/>
+	<parameter name="curso" class="java.lang.String"/>
+	<parameter name="absolutePathImageUfg" class="java.lang.String"/>
+	<parameter name="turma" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	dia,
+	conteudo
+FROM
+	Datas
+WHERE codigoTurma = $P{codigoTurma} AND aulaNormal = true
+ORDER BY dia;]]>
+	</queryString>
+	<field name="dia" class="java.sql.Date"/>
+	<field name="conteudo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<image>
+				<reportElement x="50" y="0" width="48" height="60" uuid="ffb2fa0c-536e-46ab-97c6-238fdc780134"/>
+				<imageExpression><![CDATA[$P{absolutePathImageUfg}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="276" y="0" width="206" height="20" uuid="9f4cd9cf-fb21-473c-87c0-b1df948d2d1a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Universidade Federal de Goiás]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="20" width="228" height="20" uuid="9649c5db-45b0-4218-97bf-fc30f95c3f0f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema Acadêmico de Graduação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="40" width="176" height="20" uuid="23e73618-df5a-4d15-bf7f-e3a00a444f59"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Anexo do Diário de Classe]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="20" uuid="f7077465-6edf-49c1-8549-cc1a4dbf679f"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Docente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="70" height="20" uuid="5614a7d2-21d5-45eb-8789-6ac18078e47e"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disciplina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="0" width="65" height="20" uuid="bdae7a4a-8ec5-49d7-be1c-c61a45dc4417"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semestre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="562" y="0" width="36" height="20" uuid="efd100fb-c1cd-41f9-ae65-a7f7cdca74b3"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ano:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="20" width="36" height="20" uuid="ecee94ba-0324-414b-b16a-a9e8c16ea7c6"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chts:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="0" width="379" height="20" uuid="0357284c-2b33-4f7a-9063-fc9e4e86c74d"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{matriculaProfessor}+" - "+$P{nomeProfessor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="70" y="20" width="250" height="20" uuid="9b595ddc-1e6c-497e-8185-c2aa11d757d3"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeDisciplina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="20" width="48" height="20" uuid="986ff5c7-f95c-4307-97f7-99be92de52e9"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cargaHoraria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="514" y="0" width="48" height="20" uuid="5c9b49ab-1e54-4a27-9a9b-41ef5fdbf2e4"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{semestre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="598" y="0" width="72" height="20" uuid="3375ca34-1417-467b-86b6-d9b591aa7b90"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ano}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="49" width="758" height="1" uuid="f5ce54f2-c463-4dd2-9a72-e73d26755b30"/>
+			</line>
+			<staticText>
+				<reportElement x="404" y="20" width="45" height="20" uuid="6ec77feb-45cf-4190-a90c-275f2374a83a"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="449" y="20" width="220" height="20" uuid="ebb28f12-da0b-4c4b-8491-c8f8c0b54bd5"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{curso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="669" y="20" width="41" height="20" uuid="595132e6-a011-4def-97d0-94d77a853f2f"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turma:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="710" y="20" width="48" height="20" uuid="daa94269-81d7-426a-876c-88f05d2a4620"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{turma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="758" height="43" uuid="8670ef7d-f46f-4892-87eb-d4ff608b31d9"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="28" width="70" height="15" uuid="5e82120f-8904-4bf0-9c50-998f583475d4"/>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dias]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="70" height="13" uuid="be421fd0-0921-41a0-9b01-d25afd33711f"/>
+				<box leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="0" y="0" width="70" height="13" uuid="106e3614-650c-48d9-b4ab-389b8d5f9b67"/>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="70" y="0" width="688" height="13" uuid="e84c2fba-876a-4a8a-9c1d-4134682068aa"/>
+				<box leftPadding="0">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement x="5" y="0" width="683" height="13" uuid="8f544473-6b8c-46fb-b5cb-b6ff2e61a73d"/>
+					<textElement>
+						<font fontName="Verdana"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{conteudo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="27" width="758" height="1" uuid="15670826-511a-46d9-93b5-d9824c928721"/>
+			</line>
+			<textField>
+				<reportElement x="309" y="30" width="80" height="20" uuid="0dcfd8d5-90af-4f5e-a0ff-37d0930211e9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="389" y="30" width="40" height="20" uuid="9b9352ac-ccc6-4796-89dc-c9ca0189b6d0"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH:mm:ss">
+				<reportElement x="610" y="30" width="119" height="20" uuid="0e4e8e8f-4a49-4284-a7a4-886d207dc924"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="573" y="30" width="37" height="20" uuid="abb46a51-cc09-4377-b2c7-753a1f9d0376"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="142" splitType="Stretch">
+			<staticText>
+				<reportElement x="29" y="22" width="100" height="20" uuid="94a31f0e-bb45-4952-8d49-3e6b8a838024"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observações:]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="29" y="42" width="700" height="20" uuid="1dd1e03d-1e48-4bc4-866b-670ea6be6ec9"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="29" y="62" width="700" height="20" uuid="6fc7acc2-4355-4a14-abaa-729601813702"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="29" y="82" width="700" height="20" uuid="52c4c76f-90ec-4106-aaea-fbf0b66adaa0"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="29" y="102" width="700" height="20" uuid="2b5206da-3b05-40d8-9917-6ac5e7087c23"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="29" y="122" width="700" height="20" uuid="d773b5bd-81a3-42bf-86fd-7237ee1ff640"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
